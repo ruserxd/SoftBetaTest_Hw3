@@ -1,10 +1,14 @@
 package org.project.service;
 
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
+@Slf4j
 public class ScannerBaseStatus {
     private final boolean[] baseStatus = new boolean[4];
     Scanner scanner = new Scanner(System.in);
@@ -59,6 +63,9 @@ public class ScannerBaseStatus {
                     break;
             }
         }
+
+        log.info("獲得了");
+        log.info("[本壘  ,   1壘,   2壘,   3壘]\n{}", Arrays.toString(baseStatus));
 
         System.out.println("獲得了");
         for (int i = 0; i < 3; i++) {

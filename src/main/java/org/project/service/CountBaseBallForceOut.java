@@ -2,12 +2,12 @@ package org.project.service;
 
 import static java.lang.Boolean.TRUE;
 
-public class BaseBallForceOut {
+public final class CountBaseBallForceOut {
     /**
      * boolean 0 代表壘包沒人, 1 代表壘包有人
      * base 0 -> 本壘, 1 -> 1壘, 2 -> 2壘, 3 -> 3壘
      */
-    public static boolean[] getCanForceOutBase(boolean[] baseBagStatus) {
+    public boolean[] getCanForceOutBase(boolean[] baseBagStatus) {
         // 測試是否保持壘包狀態有 4 個
         assert baseBagStatus.length == 4:"壘包的狀態必須為 4 才行!!!";
 

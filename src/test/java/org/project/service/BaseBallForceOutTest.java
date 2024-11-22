@@ -12,8 +12,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 class BaseBallForceOutTest {
+    // 用來存放預計輸入的資料
     boolean[] testBaseStatus = new boolean[4];
+
+    // 用來存放預計結果的資料
     boolean[] expectForceOutStatus = new boolean[4];
+    CountBaseBallForceOut countBaseBallForceOut = new CountBaseBallForceOut();
 
     @BeforeAll
     static void info() {
@@ -39,7 +43,7 @@ class BaseBallForceOutTest {
 
         // 只能封殺一壘
         expectForceOutStatus[1] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     @Test
@@ -53,7 +57,7 @@ class BaseBallForceOutTest {
         // 可以封殺一、二壘
         expectForceOutStatus[1] = TRUE;
         expectForceOutStatus[2] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     @Test
@@ -66,7 +70,7 @@ class BaseBallForceOutTest {
 
         // 只能封殺一壘
         expectForceOutStatus[1] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     @Test
@@ -79,7 +83,7 @@ class BaseBallForceOutTest {
 
         // 只能封殺一壘
         expectForceOutStatus[1] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     @Test
@@ -94,7 +98,7 @@ class BaseBallForceOutTest {
         expectForceOutStatus[1] = TRUE;
         expectForceOutStatus[2] = TRUE;
         expectForceOutStatus[3] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     @Test
@@ -108,7 +112,7 @@ class BaseBallForceOutTest {
         // 可以封殺一、二壘
         expectForceOutStatus[1] = TRUE;
         expectForceOutStatus[2] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     @Test
@@ -121,7 +125,7 @@ class BaseBallForceOutTest {
 
         // 只能封殺一壘
         expectForceOutStatus[1] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     @Test
@@ -136,7 +140,7 @@ class BaseBallForceOutTest {
         expectForceOutStatus[1] = TRUE;
         expectForceOutStatus[2] = TRUE;
         expectForceOutStatus[3] = TRUE;
-        assertArrayEquals(expectForceOutStatus, BaseBallForceOut.getCanForceOutBase(testBaseStatus));
+        assertArrayEquals(expectForceOutStatus, countBaseBallForceOut.getCanForceOutBase(testBaseStatus));
     }
 
     // IDEA 會在測試時打開 -ea
@@ -146,7 +150,7 @@ class BaseBallForceOutTest {
         boolean[] temporaryArray = new boolean[5];
         AssertionError thrown = assertThrows(
                 AssertionError.class,
-                () -> BaseBallForceOut.getCanForceOutBase(temporaryArray),
+                () -> countBaseBallForceOut.getCanForceOutBase(temporaryArray),
                 "為正確拋出例外資訊"
         );
 
