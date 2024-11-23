@@ -4,7 +4,7 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 public class OutPutForceOutResult {
-    public void outForceOutResult(boolean[] baseStatus, boolean[]  canForceOutBase) {
+    public void outForceOutResult(boolean[] baseStatus, boolean[] canForceOutBase) {
         // 判斷是否壘包有人的情況
         boolean judgeInput = FALSE;
 
