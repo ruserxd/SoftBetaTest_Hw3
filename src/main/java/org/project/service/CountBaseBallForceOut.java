@@ -9,7 +9,7 @@ public final class CountBaseBallForceOut {
      */
     public boolean[] getCanForceOutBase(boolean[] baseBagStatus) {
         // 測試是否保持壘包狀態有 4 個
-        assert baseBagStatus.length == 4:"壘包的狀態必須為 4 才行!!!";
+        assert baseBagStatus.length == 4 : "壘包的狀態必須為 4 才行!!!";
 
         boolean[] base = new boolean[4];
 
