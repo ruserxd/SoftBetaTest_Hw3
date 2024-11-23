@@ -29,14 +29,8 @@ public class ScannerBaseStatus {
             System.out.println("輸入 4 可退出選擇器");
             int base = scanner.nextInt();
 
-            // 針對輸入的範圍
-            if (base < 0 || base > 4) {
-                System.out.println("請輸入在範圍 (0 ~ 4) 內");
-                continue;
-            }
-
             // 針對已經選擇過的，不重複
-            if (base < 3 && baseStatus[base]) {
+            if (base >= 0 && base < 3 && baseStatus[base]) {
                 System.out.println("這項" + base + "已經有選擇過了喔");
                 continue;
             }
@@ -60,6 +54,10 @@ public class ScannerBaseStatus {
                     break;
                 case 4:
                     keepScan = FALSE;
+                    break;
+                default:
+                    // 針對輸入的範圍
+                    System.out.println("請輸入在範圍 (0 ~ 4) 內");
                     break;
             }
         }
