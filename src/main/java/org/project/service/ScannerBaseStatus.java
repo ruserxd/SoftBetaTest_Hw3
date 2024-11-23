@@ -17,7 +17,7 @@ public class ScannerBaseStatus {
     // 輸入獲得壘包的狀態
     public boolean[] getBaseStatus() {
         boolean keepScan = TRUE;
-        while(keepScan) {
+        while (keepScan) {
 
             // 針對已經滿壘的情況
             if (countTrue >= 3) {
@@ -68,11 +68,12 @@ public class ScannerBaseStatus {
         log.info("[本壘  ,   1壘,   2壘,   3壘]\n{}", Arrays.toString(baseStatus));
 
         System.out.println("獲得了");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.print(baseStatus[i] + " ");
         }
-
+        System.out.println();
         scanner.close();
+
         return baseStatus;
     }
 }
