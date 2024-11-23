@@ -11,7 +11,7 @@ import static java.lang.Boolean.TRUE;
 @Slf4j
 public class ScannerBaseStatus {
     private final boolean[] baseStatus = new boolean[4];
-    Scanner scanner = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
     private int countTrue = 0;
 
     // 輸入獲得壘包的狀態
@@ -71,6 +71,8 @@ public class ScannerBaseStatus {
         for (int i = 0; i < 3; i++) {
             System.out.print(baseStatus[i] + " ");
         }
+
+        scanner.close();
         return baseStatus;
     }
 }
